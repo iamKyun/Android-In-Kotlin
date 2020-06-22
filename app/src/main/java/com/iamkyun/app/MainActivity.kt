@@ -1,5 +1,6 @@
 package com.iamkyun.app
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -54,9 +55,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         navMain = this.findViewById(R.id.nav_main)
         navFind = this.findViewById(R.id.nav_find)
         navMe = this.findViewById(R.id.nav_me)
-        navMain.setOnClickListener(this)
-        navFind.setOnClickListener(this)
-        navMe.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {

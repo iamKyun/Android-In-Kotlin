@@ -7,4 +7,7 @@
     <string name="menu_main">menu main</string>
     <string name="nav_find">发现</string>
     <string name="nav_me">我的</string>
+    <string name="me_menu_go">购物车</string>
+    <string name="me_menu_yh">折扣券</string>
+    <string name="me_menu_sail">优惠券</string>
 </resources>
