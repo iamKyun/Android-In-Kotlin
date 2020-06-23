@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_login"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -41,7 +42,7 @@
                 android:drawableTop="@mipmap/me_menu_yh"
                 android:text="@string/me_menu_yh"
                 android:textAlignment="center"
-                android:textColor="#282828" />
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/me_menu_go"
@@ -52,7 +53,7 @@
                 android:drawableTop="@mipmap/me_menu_go"
                 android:text="@string/me_menu_go"
                 android:textAlignment="center"
-                android:textColor="#282828" />
+                android:textColor="#000000" />
         </LinearLayout>
 
     </RelativeLayout>
