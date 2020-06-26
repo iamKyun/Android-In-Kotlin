@@ -10,4 +10,23 @@
     <string name="me_menu_go">购物车</string>
     <string name="me_menu_yh">折扣券</string>
     <string name="me_menu_sail">优惠券</string>
+    <string name="list_my_menu">我的订单</string>
+    <string name="list_save">我的收藏</string>
+    <string name="list_pwd">我的口令</string>
+    <string name="list_my">我的锦囊</string>
+    <string name="safe_center">安全中心</string>
+    <string name="list_address">常用地址</string>
+    <string name="list_service">客户服务</string>
+    <string name="list_sug">建议反馈</string>
+    <string name="list_setting">设置</string>
+    <string name="login">登录</string>
+    <string name="close">Close</string>
+    <string name="login_account_hint">请输入用户名/邮箱/手机号</string>
+    <string name="login_password_hint">请输入密码</string>
+    <string name="login_button">登录</string>
+    <string name="login_forgot_password_link">找回密码</string>
+    <string name="login_register_link">免费注册</string>
+    <string name="main_header_qr_scan">扫一扫</string>
+    <string name="main_header_msg">消息</string>
+    <string name="main_header_search_hint">目的地/酒店/景点/美食</string>
 </resources>

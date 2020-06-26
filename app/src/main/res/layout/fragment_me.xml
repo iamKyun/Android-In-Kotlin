@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.MainFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#008cc9">
+        android:background="@color/header_block_background">
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:background="@mipmap/login_btn"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/login_btn" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:drawableTop="@mipmap/me_menu_sail"
+                android:drawableTop="@drawable/icon_me_sail"
                 android:text="@string/me_menu_sail"
                 android:textAlignment="center" />
 
@@ -39,10 +41,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:drawableTop="@mipmap/me_menu_yh"
+                android:drawableTop="@drawable/icon_me_yh"
                 android:text="@string/me_menu_yh"
                 android:textAlignment="center"
-                android:textColor="#000000" />
+                android:textColor="@color/textColor" />
 
             <TextView
                 android:id="@+id/me_menu_go"
@@ -50,11 +52,141 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:drawableTop="@mipmap/me_menu_go"
+                android:drawableTop="@drawable/icon_me_go"
                 android:text="@string/me_menu_go"
                 android:textAlignment="center"
-                android:textColor="#000000" />
+                android:textColor="@color/textColor" />
         </LinearLayout>
 
     </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/block_divider_grey"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:divider="@color/brightBlack"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_my_menu"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_my_menu"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_save"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_save"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_pwd"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_pwd"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_my"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_my"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:divider="@color/brightBlack"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_safe_center"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/safe_center"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_address"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_address"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_service"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_service"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_sug"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_sug"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:divider="@color/brightBlack"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/icon_list_setting"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="10dp"
+                    android:text="@string/list_setting"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

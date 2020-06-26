@@ -1,13 +1,11 @@
-package com.iamkyun.app
+package com.iamkyun.app.activity
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import com.iamkyun.app.R
 import com.iamkyun.app.fragment.FindFragment
 import com.iamkyun.app.fragment.MainFragment
 import com.iamkyun.app.fragment.MeFragment

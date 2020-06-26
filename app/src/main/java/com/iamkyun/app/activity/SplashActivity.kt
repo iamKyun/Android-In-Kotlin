@@ -1,10 +1,10 @@
-package com.iamkyun.app
+package com.iamkyun.app.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.iamkyun.app.R
 
 class SplashActivity : AppCompatActivity() {
 
