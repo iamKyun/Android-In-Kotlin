@@ -13,6 +13,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/main_carousel_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_carousel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/main_scan"
         android:layout_width="wrap_content"
@@ -23,9 +37,9 @@
         android:drawableTop="@drawable/icon_main_scan"
         android:text="@string/main_header_qr_scan"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/main_search"
@@ -40,10 +54,10 @@
         android:hint="@string/main_header_search_hint"
         android:inputType="text"
         android:paddingHorizontal="6dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@id/main_msg"
         app:layout_constraintStart_toEndOf="@+id/main_scan"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/main_msg"
@@ -55,8 +69,8 @@
         android:drawableTop="@drawable/icon_main_msg"
         android:text="@string/main_header_msg"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
