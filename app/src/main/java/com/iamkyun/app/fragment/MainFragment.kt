@@ -19,10 +19,12 @@ class MainFragment : Fragment() {
     private var isStop = false
 
     private val carouselImages = arrayOf(
+        R.mipmap.header_pic_ad2,
         R.mipmap.header_pic_ad1,
         R.mipmap.header_pic_ad2,
         R.mipmap.header_pic_ad1,
-        R.mipmap.header_pic_ad2
+        R.mipmap.header_pic_ad2,
+        R.mipmap.header_pic_ad1
     )
 
     override fun onCreateView(
@@ -43,8 +45,9 @@ class MainFragment : Fragment() {
         carouselSize = imageResIds.size
         mainCarousel.registerOnPageChangeCallback(CarouselPageChangeListener(carouselSize))
         layoutPointGroup = view.findViewById(R.id.main_carousel_index)
+        mainCarousel.setCurrentItem(1, false)
 
-        for (index in 1..carouselSize) {
+        for (index in 1..carouselSize - 2) {
             val v = ImageView(activity)
             val params = LinearLayout.LayoutParams(72, 26)
             params.leftMargin = 6
@@ -77,16 +80,32 @@ class MainFragment : Fragment() {
 
     inner class CarouselPageChangeListener(private var imageSize: Int = 0) :
         ViewPager2.OnPageChangeCallback() {
+
         private var previousPoint: Int = 0
+        private var currentPosition: Int = 0
+
+        override fun onPageSelected(position: Int) {
+            currentPosition = position;
+        }
+
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
             positionOffsetPixels: Int
         ) {
-            val curPosition = position % imageSize
-            layoutPointGroup.getChildAt(previousPoint).isEnabled = false;
-            layoutPointGroup.getChildAt(curPosition).isEnabled = true;
-            previousPoint = curPosition;
+            if (currentPosition != 0 && currentPosition != imageSize - 1) {
+                val curPosition = currentPosition + 1 % imageSize - 2
+                layoutPointGroup.getChildAt(previousPoint).isEnabled = false
+                layoutPointGroup.getChildAt(curPosition).isEnabled = true
+                previousPoint = curPosition
+            }
+        }
+
+        override fun onPageScrollStateChanged(state: Int) {
+            if (state == ViewPager2.SCROLL_STATE_IDLE && (currentPosition == 0 || currentPosition == imageSize - 1)) {
+                val newPos = if (currentPosition == 0) imageSize - 2 else 1
+                mainCarousel.setCurrentItem(newPos, false)
+            }
         }
     }
 

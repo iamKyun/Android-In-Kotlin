@@ -16,7 +16,6 @@ class MainCarouselAdapter(private val context: Context, private val images: Arra
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.carousel_page, parent, false)
         return CarouselViewHolder(view)
-
     }
 
     override fun getItemCount(): Int {
