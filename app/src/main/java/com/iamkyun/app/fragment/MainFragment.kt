@@ -1,6 +1,5 @@
 package com.iamkyun.app.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +7,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.iamkyun.app.R
 import com.iamkyun.app.adapter.MainCarouselAdapter
 import kotlin.properties.Delegates
 
 class MainFragment : Fragment() {
-    private lateinit var mainCarousel: ViewPager
+    private lateinit var mainCarousel: ViewPager2
     private lateinit var layoutPointGroup: LinearLayout
     private var carouselSize by Delegates.notNull<Int>()
     private var isStop = false
@@ -40,9 +39,9 @@ class MainFragment : Fragment() {
         mainCarousel = view.findViewById(R.id.main_carousel)
         val imageResIds = carouselImages
         mainCarousel.adapter =
-            activity?.let { MainCarouselAdapter(it, getCarouselImages(it, imageResIds)) }
+            activity?.let { MainCarouselAdapter(it, imageResIds) }
         carouselSize = imageResIds.size
-        mainCarousel.addOnPageChangeListener(CarouselPageChangeListener(carouselSize))
+        mainCarousel.registerOnPageChangeCallback(CarouselPageChangeListener(carouselSize))
         layoutPointGroup = view.findViewById(R.id.main_carousel_index)
 
         for (index in 1..carouselSize) {
@@ -77,12 +76,8 @@ class MainFragment : Fragment() {
     }
 
     inner class CarouselPageChangeListener(private var imageSize: Int = 0) :
-        ViewPager.OnPageChangeListener {
+        ViewPager2.OnPageChangeCallback() {
         private var previousPoint: Int = 0
-
-        override fun onPageScrollStateChanged(state: Int) {
-        }
-
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
@@ -93,18 +88,6 @@ class MainFragment : Fragment() {
             layoutPointGroup.getChildAt(curPosition).isEnabled = true;
             previousPoint = curPosition;
         }
-
-        override fun onPageSelected(position: Int) {
-        }
     }
 
-    private fun getCarouselImages(context: Context, imageResIds: Array<Int>): List<ImageView> {
-        return imageResIds.map {
-            val imageView = ImageView(context)
-            imageView.scaleType = ImageView.ScaleType.CENTER_CROP
-            imageView.setImageResource(it)
-            imageView
-        }
-
-    }
 }
