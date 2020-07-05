@@ -30,4 +30,19 @@
     <string name="main_header_msg">消息</string>
     <string name="main_header_search_hint">目的地/酒店/景点/美食</string>
     <string name="main_carousel_index">main carousel index</string>
+    <string name="menu_airport">飞机票</string>
+    <string name="menu_car">汽车票</string>
+    <string name="menu_course">领里程</string>
+    <string name="menu_hatol">住酒店</string>
+    <string name="menu_nearby">周边游</string>
+    <string name="menu_train">火车票</string>
+    <string name="menu_ticket">买门票</string>
+    <string name="menu_trav">去旅游</string>
+    <string name="placeholder">PLACEHOLDER</string>
+    <string name="menu_second_airport">专车服务</string>
+    <string name="menu_second_play">四处游玩</string>
+    <string name="menu_second_quan">游轮旅行</string>
+    <string name="menu_second_service">签证服务</string>
+    <string name="menu_second_ticket">国际机票</string>
+    <string name="menu_second_wifi">网络服务</string>
 </resources>

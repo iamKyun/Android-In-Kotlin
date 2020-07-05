@@ -7,13 +7,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.iamkyun.app.R
 import com.iamkyun.app.adapter.MainCarouselAdapter
+import com.iamkyun.app.adapter.MainMenuAdapter
+import com.iamkyun.app.adapter.MainMidMenuAdapter
+import com.iamkyun.app.entity.Menu
 import kotlin.properties.Delegates
 
 class MainFragment : Fragment() {
     private lateinit var mainCarousel: ViewPager2
+    private lateinit var mainMenuRecyclerView: RecyclerView
+    private lateinit var mainMidMenuRecyclerView: RecyclerView
     private lateinit var layoutPointGroup: LinearLayout
     private var carouselSize by Delegates.notNull<Int>()
     private var isStop = false
@@ -25,6 +32,23 @@ class MainFragment : Fragment() {
         R.mipmap.header_pic_ad1,
         R.mipmap.header_pic_ad2,
         R.mipmap.header_pic_ad1
+    )
+
+    private val menus = arrayOf(
+        Menu(R.drawable.menu_airport, R.string.menu_airport),
+        Menu(R.drawable.menu_car, R.string.menu_car),
+        Menu(R.drawable.menu_course, R.string.menu_course),
+        Menu(R.drawable.menu_hatol, R.string.menu_hatol),
+        Menu(R.drawable.menu_nearby, R.string.menu_nearby),
+        Menu(R.drawable.menu_train, R.string.menu_train),
+        Menu(R.drawable.menu_ticket, R.string.menu_ticket),
+        Menu(R.drawable.menu_trav, R.string.menu_trav)
+    )
+
+    private val midMenus = arrayOf(
+        Menu(R.drawable.menu_second_airport, R.string.menu_second_airport),
+        Menu(R.drawable.menu_second_service, R.string.menu_second_service),
+        Menu(R.drawable.menu_second_ticket, R.string.menu_second_ticket)
     )
 
     override fun onCreateView(
@@ -39,10 +63,9 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val view = view!!
         mainCarousel = view.findViewById(R.id.main_carousel)
-        val imageResIds = carouselImages
         mainCarousel.adapter =
-            activity?.let { MainCarouselAdapter(it, imageResIds) }
-        carouselSize = imageResIds.size
+            activity?.let { MainCarouselAdapter(it, carouselImages) }
+        carouselSize = carouselImages.size
         mainCarousel.registerOnPageChangeCallback(CarouselPageChangeListener(carouselSize))
         layoutPointGroup = view.findViewById(R.id.main_carousel_index)
         mainCarousel.setCurrentItem(1, false)
@@ -71,6 +94,14 @@ class MainFragment : Fragment() {
                 }
             }
         }.start()
+
+        mainMenuRecyclerView = view.findViewById(R.id.main_menu_rv)
+        mainMenuRecyclerView.layoutManager = GridLayoutManager(activity, 4)
+        mainMenuRecyclerView.adapter = activity?.let { MainMenuAdapter(it, menus) }
+
+        mainMidMenuRecyclerView = view.findViewById(R.id.main_mid_menu_rv)
+        mainMidMenuRecyclerView.layoutManager = GridLayoutManager(activity, 3)
+        mainMidMenuRecyclerView.adapter = activity?.let { MainMidMenuAdapter(it, midMenus) }
     }
 
     override fun onDestroy() {
